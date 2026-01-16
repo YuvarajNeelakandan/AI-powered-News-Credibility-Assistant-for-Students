@@ -310,7 +310,7 @@ st.session_state.setdefault("history", [])
 # ------------------------------
 # HEADER
 # ------------------------------
-st.markdown("<h1>📰 News Credibility Assistant</h1>", unsafe_allow_html=True)
+st.markdown("<h1>📰 AI-Powered News Credibility Assistant</h1>", unsafe_allow_html=True)
 st.markdown("<p class='subtitle'>Analyze • Compare • Learn Responsibly</p>", unsafe_allow_html=True)
 
 # ------------------------------
@@ -411,3 +411,4 @@ with st.expander("⚙️ Technical Highlights"):
 # FOOTER
 # ------------------------------
 st.markdown('<div class="footer">⚠️ Educational AI assistant. Encourages critical thinking.</div>', unsafe_allow_html=True)
+
