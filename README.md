@@ -36,11 +36,6 @@ Web App: Streamlit
 👉 https://newscred.streamlit.app
  (update if needed)
 
-🐙 GitHub Repository
-
-👉 https://github.com/your-username/news-credibility-assistant
- (update link)
-
 ⚠️ Disclaimer
 
 This system does not determine absolute truth.
