@@ -2,7 +2,8 @@ streamlit
 scikit-learn
 joblib
 nltk
-transformers
-torch
 pandas
 numpy
+torch
+sentencepiece
+transformers==4.36.2
