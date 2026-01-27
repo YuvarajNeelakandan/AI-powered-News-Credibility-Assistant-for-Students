@@ -8,15 +8,6 @@ import joblib, re, nltk, time
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from transformers import pipeline
-from transformers import pipeline
-
-@st.cache_resource
-def load_summarizer():
-    return pipeline(
-        "text2text-generation",
-        model="facebook/bart-large-cnn"
-    )
-
 
 # ------------------------------
 # PAGE CONFIG
@@ -252,7 +243,7 @@ model, vectorizer = load_ml()
 if "summarizer" not in st.session_state:
     with st.spinner("🔄 Loading AI summarizer..."):
         st.session_state.summarizer = pipeline(
-            "text2text-generation",
+            "summarization",
             model="facebook/bart-large-cnn",
             device=-1
         )
@@ -310,14 +301,28 @@ def summarize(text):
     if len(text.split()) < 50:
         return "Text too short to summarize."
 
-    result = summarizer(
+    result = st.session_state.summarizer(
         text[:1024],
         max_length=80,
         min_length=30,
         do_sample=False
     )
 
-    return result[0]["generated_text"]
+    return result[0]["summary_text"]
+
+
+#def summarize(text):
+#    if len(text.split()) < 50:
+  #      return "Text too short to summarize."
+
+   # result = summarizer(
+    #    text[:1024],
+     #   max_length=80,
+     #   min_length=30,
+     #   do_sample=False
+  #  )
+
+  #  return result[0]["generated_text"]
 
 
 #def summarize(text):
