@@ -8,6 +8,15 @@ import joblib, re, nltk, time
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from transformers import pipeline
+from transformers import pipeline
+
+@st.cache_resource
+def load_summarizer():
+    return pipeline(
+        "text2text-generation",
+        model="facebook/bart-large-cnn"
+    )
+
 
 # ------------------------------
 # PAGE CONFIG
@@ -411,4 +420,5 @@ with st.expander("⚙️ Technical Highlights"):
 # FOOTER
 # ------------------------------
 st.markdown('<div class="footer">⚠️ Educational AI assistant. Encourages critical thinking.</div>', unsafe_allow_html=True)
+
 
